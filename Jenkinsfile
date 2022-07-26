@@ -6,11 +6,8 @@ pipeline {
         edgerc = 'edgerc'
       }
       steps {
-        sh '''cd /home/jenkins_home
-wget https://raw.githubusercontent.com/akamai/edgeworkers-examples/master/edgekv/utils/edgekv-importer/index.js
-wget https://raw.githubusercontent.com/akamai/edgeworkers-examples/master/edgekv/utils/edgekv-importer/package-lock.json
-wget https://raw.githubusercontent.com/akamai/edgeworkers-examples/master/edgekv/utils/edgekv-importer/package.json
-npm install -g
+        sh '''cd /home/jenkins
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 '''
       }
     }
