@@ -9,6 +9,8 @@ pipeline {
         sh '''edgekv-importer --help
 
 '''
+        tool(name: 'njs', type: 'nodejs')
+        sh 'npm version'
       }
     }
 
