@@ -6,7 +6,7 @@ pipeline {
         edgerc = 'edgerc'
       }
       steps {
-        sh 'nvm install v14.20.0'
+        sh 'command -v nvm'
       }
     }
 
