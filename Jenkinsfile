@@ -6,7 +6,7 @@ pipeline {
         edgerc = 'edgerc'
       }
       steps {
-        sh 'command -v nvm'
+        sh 'npm man'
       }
     }
 
