@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  tools {nodejs "njs"}
   stages {
     stage('install edgekv uploader') {
       environment {
@@ -9,7 +10,6 @@ pipeline {
         sh '''edgekv-importer --help
 
 '''
-        tool(name: 'njs', type: 'nodejs')
         sh 'npm version'
       }
     }
