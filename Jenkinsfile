@@ -3,11 +3,11 @@ pipeline {
   stages {
     stage('install edgekv uploader') {
       environment {
-        edgerc = 'edgerc'
+        EDGERC = credentials('pauledgerc')
       }
       steps {
         sh '''edgekv-importer --help
-akamai install edgeworkers'''
+akamai --edgerc ${EDGERC} edgeworkers --accountkey 1-6JHGX status 50596'''
       }
     }
 
