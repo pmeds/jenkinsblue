@@ -6,7 +6,7 @@ pipeline {
         edgerc = 'edgerc'
       }
       steps {
-        sh '''./home/jenkins/install.sh
+        sh '''sh /home/jenkins/install.sh
 nvm install v14.20.0'''
       }
     }
