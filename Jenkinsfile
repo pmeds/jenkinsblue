@@ -6,7 +6,9 @@ pipeline {
         edgerc = 'edgerc'
       }
       steps {
-        sh 'npm man'
+        sh '''wget https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh /var/lib/jenkins/
+chmod 744 /var/lib/jenkins/install.sh
+sh /var/lib/jenkins/install.sh'''
       }
     }
 
