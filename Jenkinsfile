@@ -7,8 +7,7 @@ pipeline {
       }
       steps {
         sh '''cd /home/jenkins
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-'''
+nvm install v14.20.0'''
       }
     }
 
