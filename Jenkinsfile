@@ -6,7 +6,8 @@ pipeline {
         edgerc = 'edgerc'
       }
       steps {
-        sh '''wget https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh -P /var/lib/jenkins/
+        sh '''touch /var/lib/jenkins/.profile
+wget https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh -P /var/lib/jenkins/
 chmod 744 /var/lib/jenkins/install.sh
 sh /var/lib/jenkins/install.sh'''
         sh '''pwd
