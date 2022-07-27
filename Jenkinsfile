@@ -3,11 +3,8 @@ pipeline {
   stages {
     stage('get excel and python file') {
       steps {
-        sh '''wget https://raw.githubusercontent.com/akamai/edgeworkers-examples/master/edgekv/utils/edgekv-importer/index.js 
-wget https://raw.githubusercontent.com/akamai/edgeworkers-examples/master/edgekv/utils/edgekv-importer/package-lock.json 
-wget https://raw.githubusercontent.com/akamai/edgeworkers-examples/master/edgekv/utils/edgekv-importer/package.json 
-npm install -g
-wget https://raw.githubusercontent.com/pmeds/test-erc-stage/main/rules.xlsx
+        sh'npm version'
+        sh '''wget https://raw.githubusercontent.com/pmeds/test-erc-stage/main/rules.xlsx
 wget https://raw.githubusercontent.com/pmeds/test-erc-stage/main/CSV_formatter.py 
 chmod 754 /var/lib/jenkins/workspace/test-erc-stage_main/CSV_formatter.py'''
       }
@@ -53,6 +50,12 @@ chmod 754 /var/lib/jenkins/workspace/test-erc-stage_main/CSV_formatter.py'''
           }
         }
 
+      }
+    }
+
+    stage('clean up on success') {
+      steps {
+        cleanWs(cleanWhenSuccess: true)
       }
     }
 
