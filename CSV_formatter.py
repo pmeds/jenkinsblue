@@ -2,6 +2,7 @@ import pandas as pd
 import hashlib
 import csv
 import re
+# comment
 # Master file with all the rules
 filename = "rules.xlsx"
 print(filename)
